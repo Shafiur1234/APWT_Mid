@@ -146,7 +146,7 @@ class CustomerController extends Controller
     public function customerRoomBookEdit(Request $req){
         $room = Bookedroom::where('id', $req->id)->first();
         return view('customer.editroombook')->with('room', $room);
-        return $room;
+        //return $room;
     }
 
     public function customerRoomBookEditSubmit(Request $req){

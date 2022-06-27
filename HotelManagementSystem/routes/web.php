@@ -15,7 +15,7 @@ use App\Http\Controllers\CustomerController;
 */
 
 Route::get('/', function () {
-    return view('new/pp');
+    return "<br><br><br><center><h1><b>Hotel Management System</b></h1></center>";
 });
 
 ///customer controller
