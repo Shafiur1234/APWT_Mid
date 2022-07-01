@@ -33,7 +33,7 @@
 
         <tr id="row">
             <td align="center"> Rooms with price</td>
-            <td align="center"><a href ="AllRooms.php">Show</a></td>
+            <td align="center"><a href ="{{route('customer.rooms')}}">Show</a></td>
         </tr>
         <tr id="row">
             <td align="center"> Profile </td>
@@ -44,10 +44,6 @@
             <td align="center"> Ask Question</td>
             <td align="center"><a href ="CustomerViewQAns.php">Ask</a></td>
         </tr>
-        <tr id="row">
-            <td align="center">Booking History</td>
-            <td align="center"><a href ="ShowOwnApprovedRoomCus.php">Show</a></td>
-        </tr>
 
         <tr id="row">
             <td align="center"> Book Room </td>
@@ -55,7 +51,7 @@
         </tr>
         <tr id="row">
             <td align="center"> Reserve for Gym </td>
-            <td align="center"><a href ="GymReserve.php">Add</a></td>
+            <td align="center"><a href ="{{route('customer.gym')}}">Add</a></td>
         </tr>
         <tr id="row">
             <td align="center"> Reserve for Spa</td>
@@ -72,12 +68,8 @@
             <td align="center"><a href ="UpcomingEventsCust.php">Show</a></td>
         </tr>
         <tr id="row">
-            <td align="center"> Give Review</td>
+            <td align="center"> Give Review & Rating</td>
             <td align="center"><a href ="{{route('customer.review.submit')}}">Add</a></td>
-        </tr>
-        <tr id="row">
-            <td align="center"> Give Rating</td>
-            <td align="center"><a href ="">Add</a></td>
         </tr>
 
     </table>

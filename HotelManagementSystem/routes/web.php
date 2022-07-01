@@ -61,7 +61,11 @@ Route::get('/customer/review/list', [CustomerController::class, 'customerReviewL
 
 
 
+//RoomCategories
+Route::get('/customer/rooms',[CustomerController::class,'rooms'])->name('customer.rooms');
 
+//gymreserve
+Route::get('/customer/gym',[CustomerController::class,'gym'])->name('customer.gym');
 
 
 

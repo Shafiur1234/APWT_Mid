@@ -190,4 +190,13 @@ class CustomerController extends Controller
         return view('customer.reviewlist')->with('review', $review);
     }
 
+
+    public function rooms(){
+        return view('customer.rooms');
+    }
+
+    public function gym(){
+        return view('customer.gym');
+    }
+
 }
