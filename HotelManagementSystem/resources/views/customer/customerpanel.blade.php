@@ -73,7 +73,7 @@
         </tr>
         <tr id="row">
             <td align="center"> Give Review</td>
-            <td align="center"><a href ="Review.php">Add</a></td>
+            <td align="center"><a href ="{{route('customer.review.submit')}}">Add</a></td>
         </tr>
         <tr id="row">
             <td align="center"> Give Rating</td>

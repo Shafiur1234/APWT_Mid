@@ -23,7 +23,7 @@
                        <td>
                            <select id="Branch" name="Branch" value="">
                                 <option selected disabled>--select--</option>
-                                <option selected>Dhaka</option>
+                                <option>Dhaka</option>
                                 <option>Chittagong</option>
                                 <option>Barishal</option>
                                 <option>Khulna</option>

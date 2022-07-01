@@ -52,6 +52,13 @@ Route::get('/customer/room/book/edit/{id}',[CustomerController::class,'customerR
 Route::post('/customer/room/book/edit',[CustomerController::class,'customerRoomBookEditSubmit'])->name('customer.room.book.edit.submit');
 
 
+///review
+Route::get('/customer/review', [CustomerController::class, 'customerReview'])->name('customer.review');
+Route::post('/customer/review', [CustomerController::class, 'customerReviewSubmit'])->name('customer.review.submit');
+
+/// review list
+Route::get('/customer/review/list', [CustomerController::class, 'customerReviewList'])->name('customer.review.list');
+
 
 
 

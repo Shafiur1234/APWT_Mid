@@ -3,7 +3,7 @@
     <form action="{{route('customer.login.submit')}}" method="post">
         <div class="col-md-4">
             {{csrf_field()}}
-            <h3>Login</h3>
+            <h2>Login</h2>
             <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Name"><br>
             @error('name')
         <span class="text-danger">{{$message}}</span><br>
@@ -14,7 +14,7 @@
              <span class="text-danger">{{$message}}</span><br>
         @enderror
 
-            <a href="" class="btn btn-primary"> Forgot Password </a>
+            <a href="" class="btn btn-primary"> Forgot Password </a><br>
             <input type="submit" class="btn btn-primary" value="Login">
         </div>    
     </form>

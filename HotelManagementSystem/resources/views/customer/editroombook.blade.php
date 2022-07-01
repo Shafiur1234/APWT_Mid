@@ -10,7 +10,6 @@
                 <input type="text" id="RoomNo" name="RoomNo"  value="{{$room->RoomNo}}"><br>
                 
                 <select id="Branch" name="Branch" value="{{$room->Branch}}"><br>
-                    <option>--select--</option>
                     <option>Dhaka</option>
                     <option>Chittagong</option>
                     <option>Barishal</option>

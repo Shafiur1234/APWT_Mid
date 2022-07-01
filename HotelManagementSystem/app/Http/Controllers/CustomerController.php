@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Models\Bookedroom;
+use App\Models\Review;
 
 use Illuminate\Http\Request;
 
@@ -162,6 +163,31 @@ class CustomerController extends Controller
         $room->save();
 
         return redirect ()->route ('customer.room.book.list');
+    }
+
+
+
+  ///review
+    public function customerReview(){
+        return view('customer.review');
+    }
+
+    public function customerReviewSubmit(Request $req){
+        
+        $review = new Review();
+        $review->Name = $req->Name;
+        $review->Email = $req->Email;
+        $review->Subject = $req->Subject;
+        $review->Message = $req->Message;
+        $review->Rating = $req->Rating; 
+        $review->save();
+
+        return redirect()->route('customer.review.list');
+    }
+
+    public function customerReviewList(Request $req){
+        $review = Review::all();
+        return view('customer.reviewlist')->with('review', $review);
     }
 
 }
