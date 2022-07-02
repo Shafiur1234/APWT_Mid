@@ -42,7 +42,7 @@
 
         <tr id="row">
             <td align="center"> Ask Question</td>
-            <td align="center"><a href ="CustomerViewQAns.php">Ask</a></td>
+            <td align="center"><a href ="{{route('customer.ques.submit')}}">Ask</a></td>
         </tr>
 
         <tr id="row">
@@ -51,21 +51,21 @@
         </tr>
         <tr id="row">
             <td align="center"> Reserve for Gym </td>
-            <td align="center"><a href ="{{route('customer.gym')}}">Add</a></td>
+            <td align="center"><a href ="{{route('customer.gym.add')}}">Add</a></td>
         </tr>
         <tr id="row">
             <td align="center"> Reserve for Spa</td>
-            <td align="center"><a href ="Spa.php">Add</a></td>
+            <td align="center"><a href ="{{route('customer.spa.add')}}">Add</a></td>
         </tr>
 
         <tr id="row">
             <td align="center"> Order Foods</td>
-            <td align="center"><a href ="Restaurant.php">Order</a></td>
+            <td align="center"><a href ="{{route('customer.orderfood')}}">Order</a></td>
         </tr>
 
         <tr id="row">
             <td align="center">Events</td>
-            <td align="center"><a href ="UpcomingEventsCust.php">Show</a></td>
+            <td align="center"><a href ="{{route('customer.event.list')}}">Show</a></td>
         </tr>
         <tr id="row">
             <td align="center"> Give Review & Rating</td>

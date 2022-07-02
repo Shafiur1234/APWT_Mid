@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Bookedroom;
 use App\Models\Review;
+use App\Models\Gym;
+use App\Models\Spa;
+use App\Models\Question;
+
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 
@@ -51,17 +57,21 @@ class CustomerController extends Controller
             ]
         );
 
+        $filename= $req->name.'.'.$req->file('image')->getClientOriginalExtension();
+        $req->file('image')->storeAs('/public/image/',$filename);
+
+
         $customer = new Customer();
         $customer->name = $req->name;
         $customer->userName = $req->userName;
-        $customer->password = $req->password;
+        $customer->password = md5($req->password);
         $customer->email = $req->email;
         $customer->phoneNumber = $req->phoneNumber;
         $customer->nidNO = $req->nidNo;
         $customer->address = $req->address;
         $customer->gender = $req->gender;
         $customer->age = $req->age;
-        $customer->image = $req->image;
+        $customer->image = "storage/image/".$filename;
         $customer->save();
 
         return redirect()->route('customer.login.submit');
@@ -83,7 +93,7 @@ class CustomerController extends Controller
                 'password.min'=>'Atleast 4 characters required'
             ]
         );
-        $customer = Customer::where('name', $req->name)->where('password', $req->password)->first();
+        $customer = Customer::where('name', $req->name)->where('password', md5($req->password))->first();
     
         //return $customer;
         if($customer){
@@ -95,7 +105,7 @@ class CustomerController extends Controller
         return redirect()->route('customer.login.submit'); 
 
     }
-
+///Profile
     public function customerProfile(){
         $name =  Session::get('logged_name');
         $password = Session::get('logged_password');
@@ -103,6 +113,31 @@ class CustomerController extends Controller
         //return $customer;
         return view('customer.profile')->with('customer', $customer);
     }
+
+///Edit profile
+    public function customerProfileEdit(Request $req){
+        $name =  Session::get('logged_name');
+        $password = Session::get('logged_password');
+        $customer = Customer::where('name', $name)->first();
+        return view('customer.editprofile')->with('customer', $customer);
+        //return $room;
+    }
+
+    public function customerProfileEditSubmit(Request $req){
+        $name =  Session::get('logged_name');
+        $customer = Customer::where('name', $name)->first();
+        $customer->name = $req->name;
+        $customer->userName = $req->userName;
+        $customer->email = $req->email;
+        $customer->phoneNumber = $req->phoneNumber;
+        $customer->nidNo = $req->nidNo;
+        $customer->address = $req->address;
+        $customer->age = $req->age;
+        $customer->save();
+
+        return redirect ()->route ('customer.profile');
+    }
+
 
     public function customerPanel(){
         return view('customer.customerpanel');
@@ -190,13 +225,121 @@ class CustomerController extends Controller
         return view('customer.reviewlist')->with('review', $review);
     }
 
-
+///Room categories
     public function rooms(){
         return view('customer.rooms');
     }
 
-    public function gym(){
+ ///Gym Reserve
+    public function addGym(){
         return view('customer.gym');
+    }
+    public function addGymSubmit(Request $req){
+        $gym = new Gym();
+        $gym->schedule = $req->schedule; 
+        $gym->save();
+        //return $gym;
+        return redirect()->route('customer.gym.list');
+    }
+
+    public function gymList(){
+        $gym = Gym::all();
+        return view('customer.gymlist')->with('gym', $gym);
+    }
+
+
+    public function customerGymEdit(Request $req){
+        $gym = Gym::where('id', $req->id)->first();
+        return view('customer.editgym')->with('gym', $gym);
+        //return $room;
+    }
+
+    public function customerGymEditSubmit(Request $req){
+        $gym = Gym::where('id', $req->id)->first();
+        $gym->schedule = $req->schedule; 
+        $gym->save();
+
+        return redirect ()->route ('customer.gym.list');
+    }
+
+    public function customerGymDelete(Request $req){
+        $id = $req->id;
+        $gym = Gym::where('id', $id)->delete();
+        return redirect ()->route ('customer.gym.list');
+
+    }
+
+
+
+///Spa Reserve
+public function addSpa(){
+    return view('customer.spa');
+}
+public function addSpaSubmit(Request $req){
+    $spa = new Spa();
+    $spa->schedule = $req->schedule; 
+    $spa->save();
+    //return $gym;
+    return redirect()->route('customer.spa.list');
+}
+
+public function spaList(){
+    $spa = Spa::all();
+    return view('customer.spalist')->with('spa', $spa);
+}
+
+
+public function customerSpaEdit(Request $req){
+    $spa = Spa::where('id', $req->id)->first();
+    return view('customer.editspa')->with('spa', $spa);
+    //return $room;
+}
+
+public function customerSpaEditSubmit(Request $req){
+    $spa = Spa::where('id', $req->id)->first();
+    $spa->schedule = $req->schedule; 
+    $spa->save();
+
+    return redirect ()->route ('customer.spa.list');
+}
+
+public function customerSpaDelete(Request $req){
+    $id = $req->id;
+    $spa = Spa::where('id', $id)->delete();
+    return redirect ()->route ('customer.spa.list');
+
+}
+
+///Food Order
+public function orderFood(){
+    return view('customer.orderfood');
+}
+
+///Question
+public function customerQues(){
+    return view('customer.ques');
+}
+
+public function customerQuesSubmit(Request $req){
+    
+    $ques = new Question();
+    $ques->userName = $req->userName;
+    $ques->question = $req->question;
+    $ques->save();
+
+    return redirect()->route('customer.ques.list');
+}
+
+public function customerQuesList(Request $req){
+    $ques = Question::all();
+    return view('customer.queslist')->with('ques', $ques);
+}
+
+///Mail Send
+    public function mailSend(){
+        $e_sub = "Successfully Send Mail";
+        $e_body = "NAME: SHAFIUR RAHMAN\nID:19-40770-2";
+        Mail::to('hasanmahmudul2457@gmail.com')->send(new SendMail($e_sub, $e_body));
     }
 
 }

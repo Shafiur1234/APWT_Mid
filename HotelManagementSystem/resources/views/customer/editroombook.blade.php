@@ -1,7 +1,7 @@
 <br><br>
     
 <center>   
-    <h3>Edit Room Book</h3> 
+    <h3>Edit profile</h3> 
     <form action="{{route('customer.room.book.edit.submit')}}" method="post">
         <div class="col-md-4">
                 {{csrf_field()}}

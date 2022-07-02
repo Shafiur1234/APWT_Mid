@@ -5,11 +5,7 @@
                     <tr>
                         <td align="center" colspan="2"><h1>Profile</h1></td>
                     </tr>
-                    <tr>
-                        <td align="center" colspan="2"><img width="300px" heigth="200px" src="{{asset($customer->image)}}"/></td>
-                    </tr>
-
-                    <tr>
+   
                         <td align="center"><b>Name:</b></td>
                         <td align="center">
                             {{$customer->name}}
@@ -73,7 +69,11 @@
                             <br><span id="err_Phone">&nbsp; <br></span>
                         </td>        
                     </tr>
-
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary" href="{{route('customer.profile.edit', ['id'=>$customer->id])}}">Edit Profile</a>
+                        </td>
+                    <tr>
                 </table>
         </fieldset>
     </body>

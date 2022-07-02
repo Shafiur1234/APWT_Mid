@@ -18,4 +18,5 @@
             <input type="submit" class="btn btn-primary" value="Login">
         </div>    
     </form>
+    <div><a href="{{route('customer.add.submit')}}">Sign Up</a><div>
 </center>
