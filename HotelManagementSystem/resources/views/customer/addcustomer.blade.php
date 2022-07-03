@@ -72,6 +72,12 @@
             <input type="reset" value="Reset">
 
             <input type="submit" value="Submit">
+            <br>
+            <br>
+            <br>
+            <a href="{{route('customer.login.submit')}}">Sign in</a>
+
+            
         </div>
 	</form>
 </center>

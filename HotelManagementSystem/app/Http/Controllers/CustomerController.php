@@ -335,6 +335,19 @@ public function customerQuesList(Request $req){
     return view('customer.queslist')->with('ques', $ques);
 }
 
+
+//Home page
+public function home(){
+    return view('customer.Home');  
+}
+
+
+///Gallery
+public function gallery(){
+    return view('customer.gallery'); 
+
+}
+
 ///Mail Send
     public function mailSend(){
         $e_sub = "Successfully Send Mail";

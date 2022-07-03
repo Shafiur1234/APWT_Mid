@@ -3,7 +3,7 @@
 	<h1 > Booking can be done on the previous day before or on the current day </h1>
 	<form action="{{route('customer.gym.add.submit')}}" method="post">
     {{csrf_field()}}
-	{{ print_r(URL('')) }}
+	
 	<table>
 	
 		<tr> 

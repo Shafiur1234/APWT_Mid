@@ -122,24 +122,18 @@ Route::get('/customer/event', [EventController::class, 'Event'])->name('customer
 Route::post('/customer/event', [EventController::class, 'EventSubmit'])->name('customer.event.submit');
 
 /// Event list
-Route::get('/customer/review/list', [EventController::class, 'EventList'])->name('customer.event.list')->middleware('customerAuthorized');
+Route::get('/customer/review/list', [EventController::class, 'EventList'])->name('customer.event.list');
  
+
+//RoomCategories
+Route::get('/customer/home',[CustomerController::class,'home'])->name('customer.Home');
+
+//Gallery
+Route::get('/customer/gallery',[CustomerController::class,'gallery'])->name('customer.gallery');
 
 
 ///mail sending
 //Route::get('/customer/mail',[CustomerController::class,'mailSend']);
 Route::get('/send/mail',[CustomerController::class,'mailSend']);
-
-
-
-
-
-
-
-
-
-
-
-
 
 

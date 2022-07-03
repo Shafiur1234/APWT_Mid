@@ -4,7 +4,7 @@
 	<fieldset>
 	<form action="{{route('customer.room.book.submit')}}" method = "post">
     {{csrf_field()}}
-    {{ print_r(URL('')) }}
+    
 		<table align="center">
 			<tr>
 				<td colspan="2" align="center"><h1><b>Room Categories</b></h1></td>
