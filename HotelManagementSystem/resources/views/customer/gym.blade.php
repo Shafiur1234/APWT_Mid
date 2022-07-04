@@ -1,3 +1,4 @@
+@include('layouts.boots')
 <html>
     <body>
 	<h1 > Booking can be done on the previous day before or on the current day </h1>
@@ -19,7 +20,7 @@
 	
 		<tr>
 			<td align = "center" colspan="2"> 
-				<h1><input align = "Right" type="submit" value="Book"></h1> 
+				<h1><input class="btn btn-success" align = "Right" type="submit" value="Book"></h1> 
 			</td> 
 		</tr>
 	

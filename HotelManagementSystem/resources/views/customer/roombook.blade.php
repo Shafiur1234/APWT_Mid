@@ -1,3 +1,4 @@
+@include('layouts.boots')
 <html>
     <body>
         <fieldset>
@@ -10,7 +11,7 @@
                     <tr>
                         <td align="center" colspan="2"><img width="300px" heigth="200px" src="https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg"/></td>
                     </tr>
-
+                    
                     <tr>
                        <td align="left"><b>Room No:</b></td>
                        <td><input type="text" id="RoomNo" name="RoomNo"  value="" >
@@ -79,7 +80,7 @@
 
 
                     <tr align="center">
-                       <td colspan="2"> <input type="submit" value="Book Now"></td>
+                       <td colspan="2"> <input class="btn btn-success" type="submit" value="Book Now"></td>
                     </tr>
                 </table>
             </form>

@@ -1,3 +1,4 @@
+@include('layouts.boots')
 <center>
     <br>
     <form action="{{route('customer.login.submit')}}" method="post">
@@ -14,9 +15,9 @@
              <span class="text-danger">{{$message}}</span><br>
         @enderror
 
-            <a href="" class="btn btn-primary"> Forgot Password </a><br>
+            <a href="" class="btn btn-primary"> Forgot Password </a>
             <input type="submit" class="btn btn-primary" value="Login">
         </div>    
     </form>
-    <div><a href="{{route('customer.add.submit')}}">Sign Up</a><div>
+    <div><a  class="btn btn-success" href="{{route('customer.add.submit')}}">Sign Up</a><div>
 </center>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\NoticeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +40,8 @@ Route::get('/customer/logout', [CustomerController::class, 'cusotmerLogout'])->n
 Route::get('/customer/profile', [CustomerController::class, 'customerProfile'])->name('customer.profile')->middleware('customerAuthorized');
 
 //edit profile
-Route::get('/customer/profile/edit/{id}',[CustomerController::class,'customerProfileEdit'])->name('customer.profile.edit')->middleware('customerAuthorized');
-Route::post('/customer/profile/edit',[CustomerController::class,'customerProfileEditSubmit'])->name('customer.profile.edit.submit')->middleware('customerAuthorized');
+//Route::get('/customer/profile/edit/{name}',[CustomerController::class,'customerProfileEdit'])->name('customer.profile.edit')->middleware('customerAuthorized');
+//Route::post('/customer/profile/edit',[CustomerController::class,'customerProfileEditSubmit'])->name('customer.profile.edit.submit')->middleware('customerAuthorized');
 
 
 ///room book
@@ -63,7 +64,7 @@ Route::get('/customer/review', [CustomerController::class, 'customerReview'])->n
 Route::post('/customer/review', [CustomerController::class, 'customerReviewSubmit'])->name('customer.review.submit')->middleware('customerAuthorized');
 
 /// review list
-Route::get('/customer/review/list', [CustomerController::class, 'customerReviewList'])->name('customer.review.list')->middleware('customerAuthorized');
+Route::get('/customer/review/list', [CustomerController::class, 'customerReviewList'])->name('customer.review.list');
 
 
 
@@ -122,18 +123,26 @@ Route::get('/customer/event', [EventController::class, 'Event'])->name('customer
 Route::post('/customer/event', [EventController::class, 'EventSubmit'])->name('customer.event.submit');
 
 /// Event list
-Route::get('/customer/review/list', [EventController::class, 'EventList'])->name('customer.event.list');
+Route::get('/customer/event/list', [EventController::class, 'EventList'])->name('customer.event.list');
  
 
-//RoomCategories
+//Home Page
 Route::get('/customer/home',[CustomerController::class,'home'])->name('customer.Home');
 
 //Gallery
 Route::get('/customer/gallery',[CustomerController::class,'gallery'])->name('customer.gallery');
 
+///Add notice
+Route::get('/add/notice', [NoticeController::class, 'AddNotice'])->name('reception.addnotice');
+Route::post('/add/notice', [NoticeController::class, 'AddNoticeSubmit'])->name('reception.addnotice.submit');
 
-///mail sending
-//Route::get('/customer/mail',[CustomerController::class,'mailSend']);
-Route::get('/send/mail',[CustomerController::class,'mailSend']);
+
+/// notice list
+Route::get('/add/notice/list', [NoticeController::class, 'AddNoticeList'])->name('reception.addnotice.list');
+
+
+//Mail
+Route::get('/mail',[CustomerController::class,'mail'])->name('mail');
+Route::post('/mail',[CustomerController::class,'mailSubmit'])->name('mail.submit');
 
 

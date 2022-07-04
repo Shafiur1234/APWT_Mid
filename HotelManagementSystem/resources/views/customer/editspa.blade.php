@@ -1,3 +1,4 @@
+@include('layouts.boots')
 <br><br>
     
 <center>   
@@ -8,9 +9,9 @@
                 <input type="hidden" name="id" class="form-control" value="{{$spa->id}}"><br>
              
                 <input type="text" id="schedule" name="schedule"  value="{{$spa->schedule}}"><br>
-                
+                <br>
                 <input type="reset" class="btn btn-primary" value="Reset">&nbsp;&nbsp;
-                <input type="submit" value="Update">
+                <input type="submit" class="btn btn-success" value="Update">
         </div>    
     </form>
 </center>    

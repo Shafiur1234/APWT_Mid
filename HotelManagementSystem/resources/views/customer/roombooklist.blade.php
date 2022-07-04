@@ -1,3 +1,4 @@
+@include('layouts.boots')
 <br><br>
 <table align="center" border="3">
     <tr align="center">
@@ -24,8 +25,8 @@
             <td>{{$r->CIT}}</td>
             <td>{{$r->COT}}</td>
             <td>
-                <a class="btn btn-primary" href="{{route('customer.room.book.edit',['id'=>$r->id])}}">Edit | </a>
-                <a class="btn btn-primary" href="{{route('customer.room.book.delete',['id'=>$r->id])}}">Delete</a>
+                <a class="btn btn-primary" href="{{route('customer.room.book.edit',['id'=>$r->id])}}">Edit </a>
+                <a class="btn btn-danger" href="{{route('customer.room.book.delete',['id'=>$r->id])}}">Delete</a>
             </td>
         </tr>    
     @endforeach

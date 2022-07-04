@@ -1,4 +1,4 @@
-
+@include('layouts.boots')
 <html>
 	<body>
 		<fieldset>
@@ -30,7 +30,7 @@
 	
 					
 					<tr>
-						<td colspan="3" align="center"> <input name="Add_Review" type="Submit" value="Submit">
+						<td colspan="3" align="center"> <input class="btn btn-success" name="Add_Review" type="Submit" value="Submit">
 				    </td>
 					</tr>
 				</table>

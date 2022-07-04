@@ -72,6 +72,11 @@
             <td align="center"><a href ="{{route('customer.review.submit')}}">Add</a></td>
         </tr>
 
+        <tr id="row">
+            <td align="center">Contact Us</td>
+            <td align="center"><a href ="{{route('mail')}}">Mail</a></td>
+        </tr>
+
     </table>
 </body>    
 </html>

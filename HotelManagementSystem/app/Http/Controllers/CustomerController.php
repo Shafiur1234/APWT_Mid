@@ -113,7 +113,7 @@ class CustomerController extends Controller
         //return $customer;
         return view('customer.profile')->with('customer', $customer);
     }
-
+/*
 ///Edit profile
     public function customerProfileEdit(Request $req){
         $name =  Session::get('logged_name');
@@ -138,7 +138,7 @@ class CustomerController extends Controller
         return redirect ()->route ('customer.profile');
     }
 
-
+*/
     public function customerPanel(){
         return view('customer.customerpanel');
     }
@@ -348,11 +348,16 @@ public function gallery(){
 
 }
 
-///Mail Send
-    public function mailSend(){
-        $e_sub = "Successfully Send Mail";
-        $e_body = "NAME: SHAFIUR RAHMAN\nID:19-40770-2";
-        Mail::to('hasanmahmudul2457@gmail.com')->send(new SendMail($e_sub, $e_body));
+    ///Mail Send
+    public function mail(){
+        return view('customer.sendmail');
+    }
+    public function mailSubmit(Request $req){
+        $e_sub = $req->e_sub;
+        $e_body = $req->e_body;
+        $to = $req->to;
+        Mail::to($to)->send(new SendMail($e_sub, $e_body));
+        return view('customer.successful');
     }
 
 }

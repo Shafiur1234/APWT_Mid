@@ -8,8 +8,6 @@
                 <input type="hidden" name="id" class="form-control" value="{{$customer->id}}"><br>
              Name:
                 <input type="text" id="name" name="name"  value="{{$customer->name}}"><br>
-                
-                
             Username:
                 <input type="text" id="userName" name="userName" value="{{$customer->userName}}"><br>
             Email:   
@@ -17,7 +15,7 @@
             Phone Number:   
                 <input id="phoneNumber" name="phoneNumber" value="{{$customer->phoneNumber}}" type="text"><br>
             NID:
-                <input id="nidNO" name="nidNO" value="{{$customer->nidNo}}" type="text"><br>
+                <input id="nidNO" name="nidNo" value="{{$customer->nidNo}}" type="text"><br>
             Address:  
                 <input id="address" name="address" value="{{$customer->address}}" type="text"><br>
             Age:

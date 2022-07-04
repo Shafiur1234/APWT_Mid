@@ -81,7 +81,7 @@
 	<table align="center" style="background-color:rgb(220, 220, 220); width:100%; height:7%;">
 		<tr>
 			<td colspan="2" align="center">
-				<a href="HomePageF.php"><b>Home</b></a>
+				<a href="{{route('customer.Home')}}"><b>Home</b></a>
 			</td>
 			<td colspan="2" align="center">
 				<a href="{{route('customer.rooms')}}"><b>Rooms</b></a>
@@ -100,6 +100,10 @@
 			</td>
 			<td colspan="2" align="right">
 				<a href="{{route('customer.spa.add.submit')}}"><b>Spa</b></a>
+			</td>
+
+			<td colspan="2" align="right">
+				<a href="{{route('reception.addnotice.list')}}"><b>Notices</b></a>
 			</td>
 			
 			<td  align="center">

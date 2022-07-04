@@ -1,3 +1,4 @@
+@include('layouts.boots')
 <html>
 <head>
 	<style>
@@ -74,8 +75,7 @@
             <input type="submit" value="Submit">
             <br>
             <br>
-            <br>
-            <a href="{{route('customer.login.submit')}}">Sign in</a>
+            <a class="btn btn-primary" href="{{route('customer.login.submit')}}">Sign in</a>
 
             
         </div>

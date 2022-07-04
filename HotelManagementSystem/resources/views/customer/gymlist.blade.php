@@ -1,3 +1,5 @@
+@include('layouts.boots')
+<br><br>
 <table align="center" border="3">
     <tr align="center">
         <td>Schedule</td>
@@ -8,8 +10,8 @@
     <tr align="center">
         <td>{{$g->schedule}}</td>
         <td>
-            <a class="btn btn-primary" href="{{route('customer.gym.edit',['id'=>$g->id])}}">Edit | <a>
-            <a class="btn btn-primary" href="{{route('customer.gym.delete',['id'=>$g->id])}}">Delete<a>
+            <a class="btn btn-primary" href="{{route('customer.gym.edit',['id'=>$g->id])}}">Edit <a>
+            <a class="btn btn-danger" href="{{route('customer.gym.delete',['id'=>$g->id])}}">Delete<a>
         </td>
     </tr>
     @endforeach

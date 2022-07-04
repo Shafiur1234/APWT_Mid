@@ -23,8 +23,8 @@ class SendMail extends Mailable
     public function __construct($e_sub, $e_body)
     {
         //
-        $this->sub = $e_body;
-        $this->body = $e_sub;
+        $this->sub = $e_sub;
+        $this->body = $e_body;
        
     }
 

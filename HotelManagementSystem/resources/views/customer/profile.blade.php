@@ -1,3 +1,6 @@
+@include('layouts.boots')
+<br>
+<br>
 <html>
     <body>
         <fieldset>
@@ -5,6 +8,8 @@
                     <tr>
                         <td align="center" colspan="2"><h1>Profile</h1></td>
                     </tr>
+                    <br>
+                    <tr>
    
                         <td align="center"><b>Name:</b></td>
                         <td align="center">
@@ -69,11 +74,7 @@
                             <br><span id="err_Phone">&nbsp; <br></span>
                         </td>        
                     </tr>
-                    <tr>
-                        <td>
-                            <a class="btn btn-primary" href="{{route('customer.profile.edit', ['id'=>$customer->id])}}">Edit Profile</a>
-                        </td>
-                    <tr>
+                    
                 </table>
         </fieldset>
     </body>
