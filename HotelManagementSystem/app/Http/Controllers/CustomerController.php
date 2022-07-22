@@ -327,7 +327,7 @@ public function customerQuesSubmit(Request $req){
     $ques->question = $req->question;
     $ques->save();
 
-    return redirect()->route('customer.ques.list');
+    return redirect()->route('customer.panel');
 }
 
 public function customerQuesList(Request $req){

@@ -17,7 +17,8 @@ use App\Http\Controllers\NoticeController;
 */
 
 Route::get('/', function () {
-    return "<br><br><br><center><h1><b>Hotel Management System</b></h1></center>";
+    return view('customer.login');
+    //return "<br><br><br><center><h1><b>Hotel Management System</b></h1></center>";
 });
 
 ///customer controller
@@ -69,7 +70,7 @@ Route::get('/customer/review/list', [CustomerController::class, 'customerReviewL
 
 
 //RoomCategories
-Route::get('/customer/rooms',[CustomerController::class,'rooms'])->name('customer.rooms')->middleware('customerAuthorized');
+Route::get('/customer/rooms',[CustomerController::class,'rooms'])->name('customer.rooms');
 
 //gymreserve
 Route::get('/customer/gym/add',[CustomerController::class,'addGym'])->name('customer.gym.add')->middleware('customerAuthorized');
